@@ -4,7 +4,7 @@ import './Store.css';
 const Store = () => {
     return (
         <>
-            <h2>Store</h2>
+            <h2 className="topMargin">Store</h2>
         </>
     );
 };

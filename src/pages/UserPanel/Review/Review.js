@@ -4,7 +4,8 @@ import './Review.css';
 const Review = () => {
     return (
         <>
-            <h2>Review</h2>
+            <p className="topMargin text-danger" >MY REVIEW JUNO TOYS &  GAMES</p>
+            <h2 className="all-heading">My Review</h2>
         </>
     );
 };

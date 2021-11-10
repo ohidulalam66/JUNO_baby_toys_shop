@@ -14,7 +14,7 @@ const Banner = () => {
     })
     return (
         <>
-            <div className="banner-bg">
+            <div className="banner-bg topPadding">
                 <Container>
                     <Row>
                         <Col xs={12} md={6}>

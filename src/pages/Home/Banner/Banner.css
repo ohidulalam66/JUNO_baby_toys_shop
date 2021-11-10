@@ -9,6 +9,10 @@
 
 }
 
+.topPadding {
+    padding-top: 100px;
+}
+
 .banner-content {
     background-color: #ffffff;
     opacity: 0.7;
@@ -17,7 +21,7 @@
 
 .banner-heading {
     color: #F6AA43;
-    font-size: 70px;
+    font-size: 50px;
     margin: 30px;
 }
 

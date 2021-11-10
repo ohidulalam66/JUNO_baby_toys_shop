@@ -1,0 +1,24 @@
+.main-dashboard-link {
+    padding: 10px 50px;
+    margin: auto;
+    border: none;
+}
+
+.panel-heading {
+    color: #E03645;
+}
+.panel-heading:hover {
+    color: #19D3AE;
+}
+
+.dashboard-link {
+    padding: 20px 130px;
+    margin: auto;
+    border: none;
+    width: 100%;
+}
+
+.dashboard-link:hover {
+    color: #19D3AE;
+    background: #FFD661;
+}

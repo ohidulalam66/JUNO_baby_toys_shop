@@ -26,7 +26,7 @@ const Login = () => {
     return (
         <>
             <Container>
-                <p className="my-3 text-danger" >LOGIN JUNO TOYS & GAMES</p>
+                <p className="topMargin text-danger" >LOGIN JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">Login</h2>
                 <Row className="d-flex  align-items-center">
                     <Col sx={12} md={6}>
@@ -36,24 +36,21 @@ const Login = () => {
                         <form onSubmit="">
                             <FloatingLabel
                                 required
-                                label="Email"
-                                type="email"
+                                label="Email*"
                                 name="email"
                                 onBlur={handleOnBlur}
                                 className="my-3"
                             >
-                                <Form.Control placeholder="name@example.com" />
+                                <Form.Control placeholder="name@example.com" type="email" />
                             </FloatingLabel>
                             <FloatingLabel
                                 required
                                 label="Password"
-                                type="password"
                                 name="password"
                                 onBlur={handleOnBlur}
                                 className="my-3"
-
                             >
-                                <Form.Control placeholder="password..." />
+                                <Form.Control placeholder="..." type="password" />
                             </FloatingLabel>
                             <button type="submit">LOGIN</button>
                         </form>

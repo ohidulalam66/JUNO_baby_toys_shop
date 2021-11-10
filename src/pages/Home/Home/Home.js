@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import DiscoverNow from '../DiscoverNow/DiscoverNow';
 import PopularProducts from '../PopularProducts/PopularProducts';
-import Review from '../Review/Review';
+import ReviewPost from '../ReviewPost/ReviewPost';
 
 const Home = () => {
     return (
@@ -10,7 +10,7 @@ const Home = () => {
             <Banner />
             <PopularProducts />
             <DiscoverNow />
-            <Review />
+            <ReviewPost />
         </>
     );
 };

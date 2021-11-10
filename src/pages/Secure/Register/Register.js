@@ -29,51 +29,47 @@ const Register = () => {
     return (
         <>
             <Container>
-                <p className="my-3 text-danger" >REGISTER JUNO TOYS & GAMES</p>
+                <p className="text-danger topMargin" >REGISTER JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">Register</h2>
                 <Row className="d-flex  align-items-center">
                     <Col sx={12} md={6} className="all-bg p-5">
                         <form onSubmit="">
                             <FloatingLabel
                                 required
-                                label="Name"
+                                label="Name*"
                                 name="name"
                                 onBlur={handleOnBlur}
                                 className="my-3"
                             >
-                                <Form.Control placeholder="name@example.com" />
+                                <Form.Control placeholder="name" type="name" />
                             </FloatingLabel>
                             <FloatingLabel
                                 required
-                                label="Email"
-                                type="email"
+                                label="Email*"
                                 name="email"
                                 onBlur={handleOnBlur}
                                 className="my-3"
                             >
-                                <Form.Control placeholder="name@example.com" />
+                                <Form.Control placeholder="name@example.com" type="email" />
                             </FloatingLabel>
                             <FloatingLabel
                                 required
-                                label="Password"
-                                type="password"
+                                label="Password*"
                                 name="password"
                                 onBlur={handleOnBlur}
                                 className="my-3"
                             >
-                                <Form.Control placeholder="name@example.com" />
+                                <Form.Control placeholder="..." type="password" />
                             </FloatingLabel>
                             <FloatingLabel
                                 required
-                                label="Re-Password"
-                                type="password"
+                                label="Re-Password*"
                                 name="password2"
                                 onBlur={handleOnBlur}
                                 className="my-3"
                             >
-                                <Form.Control placeholder="name@example.com" />
+                                <Form.Control placeholder="..." type="password" />
                             </FloatingLabel>
-
                             <button type="submit">REGISTER</button>
                         </form>
                         <Link className="text-decoration-none link-hover mt-3" to="/login">

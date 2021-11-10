@@ -4,7 +4,7 @@ import './PopularProducts.css';
 const PopularProducts = () => {
     return (
         <>
-            <h2>PopularProducts</h2>
+            <h2>Popular In Store</h2>
         </>
     );
 };
