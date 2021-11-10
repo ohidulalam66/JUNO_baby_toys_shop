@@ -10,6 +10,10 @@ import {
 import MyOrders from '../../UserPanel/MyOrders/MyOrders';
 import CheckOut from '../../UserPanel/CheckOut/CheckOut';
 import Review from '../../UserPanel/Review/Review';
+import ManageAllOrders from '../../AdminPanel/ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../../AdminPanel/ManageProducts/ManageProducts';
+import AddProducts from '../../AdminPanel/AddProducts/AddProducts';
+import MakeAdmin from '../../AdminPanel/MakeAdmin/MakeAdmin';
 
 
 const Dashboard = () => {
@@ -25,16 +29,29 @@ const Dashboard = () => {
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>
                         <img src="https://i.im.ge/2021/11/10/oYTSXP.png" alt="" />
+                        {/* user panel */}
                         <h3 className="panel-heading">User Panel</h3>
+                        {/* admin panel */}
+                        {/* <h3 className="panel-heading">Admin Panel</h3> */}
                     </Offcanvas.Header>
                     <Offcanvas.Body>
+                        {/* user panel */}
                         <Stack gap={3}>
                             <Link to={`${url}/myOrders`}><button className="dashboard-link">My Orders</button></Link>
                             <Link to={`${url}/checkOut`}><button className="dashboard-link">Check Out</button></Link>
                             <Link to={`${url}/review`}><button className="dashboard-link">Review</button></Link>
                         </Stack>
+                        <br />
+                        {/* admin panel */}
+                        <Stack gap={3}>
+                            <Link to={`${url}/manageAllOrders`}><button className="dashboard-link">Manage All Orders</button></Link>
+                            <Link to={`${url}/manageProducts`}><button className="dashboard-link">Manage Products</button></Link>
+                            <Link to={`${url}/addProducts`}><button className="dashboard-link">Add Products</button></Link>
+                            <Link to={`${url}/makeAdmin`}><button className="dashboard-link">Make Admin</button></Link>
+                        </Stack>
                     </Offcanvas.Body>
                 </Offcanvas>
+                {/* user panel */}
                 <Switch>
                     <Route exact path={path}>
                         <MyOrders />
@@ -47,6 +64,24 @@ const Dashboard = () => {
                     </Route>
                     <Route path={`${path}/review`}>
                         <Review />
+                    </Route>
+                </Switch>
+                {/* admin panel */}
+                <Switch>
+                    <Route exact path={path}>
+                        <ManageAllOrders />
+                    </Route>
+                    <Route path={`${path}/manageAllOrders`}>
+                        <ManageAllOrders />
+                    </Route>
+                    <Route path={`${path}/manageProducts`}>
+                        <ManageProducts />
+                    </Route>
+                    <Route path={`${path}/addProducts`}>
+                        <AddProducts />
+                    </Route>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin />
                     </Route>
                 </Switch>
                 <button className="main-dashboard-link my-5" onClick={handleShow}>Open Drawer</button>

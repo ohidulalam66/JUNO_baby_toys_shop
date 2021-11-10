@@ -1,10 +1,12 @@
 .all-heading {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 100;
 }
+
 .topMargin {
     margin-top: 100px;
 }
+
 .link-hover:hover {
     color: red;
     text-decoration: underline;
