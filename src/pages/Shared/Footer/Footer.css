@@ -1,0 +1,27 @@
+.footer-bg {
+    background: #182352;
+}
+.icons a{
+    color: white;
+    font-size: 32px;
+    margin: 15px;
+}
+.fa-facebook:hover {
+    color: #4267B2;
+    transition: all .4s ease-in-out;
+}
+.fa-github:hover {
+    color: #6cc644;
+    transition: all .4s ease-in-out;
+}
+.fa-twitter:hover {
+    color: #1DA1F2;
+    transition: all .4s ease-in-out;
+}
+.fa-linkedin-in:hover {
+    color: #0e76a8;
+    transition: all .4s ease-in-out;
+}
+.footer-bg p {
+    letter-spacing: 1px;
+}

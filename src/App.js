@@ -10,6 +10,7 @@ import Footer from './pages/Shared/Footer/Footer';
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 import Store from './pages/Store/Store';
+import Dashboard from './pages/Home/Dashboard/Dashboard';
 
 function App() {
     return (
@@ -25,6 +26,11 @@ function App() {
                     </Route>
                     <Route path="/store">
                         <Store />
+                    </Route>
+                    <Route path="/dashboard">
+                        <Dashboard />
+                    </Route>
+                    <Route path="/login">
                     </Route>
                     <Route path="*">
                         <NotFound />
