@@ -4,7 +4,8 @@ import './Store.css';
 const Store = () => {
     return (
         <>
-            <h2 className="topMargin">Store</h2>
+            <p className="text-danger topMargin" >IN STORE JUNO TOYS & GAMES</p>
+            <h2 className="all-heading">In Store</h2>
         </>
     );
 };

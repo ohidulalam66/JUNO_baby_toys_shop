@@ -13,37 +13,40 @@ import Store from './pages/Store/Store';
 import Dashboard from './pages/Home/Dashboard/Dashboard';
 import Login from './pages/Secure/Login/Login';
 import Register from './pages/Secure/Register/Register';
+import AuthProvider from './pages/Shared/context/AuthProvider/AuthProvider';
 
 function App() {
     return (
         <div className="App">
-            <Router>
-                <Navigation />
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/home">
-                        <Home />
-                    </Route>
-                    <Route path="/store">
-                        <Store />
-                    </Route>
-                    <Route path="/dashboard">
-                        <Dashboard />
-                    </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    <Route path="/register">
-                        <Register />
-                    </Route>
-                    <Route path="*">
-                        <NotFound />
-                    </Route>
-                </Switch>
-                <Footer />
-            </Router>
+            <AuthProvider>
+                <Router>
+                    <Navigation />
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
+                        <Route path="/home">
+                            <Home />
+                        </Route>
+                        <Route path="/store">
+                            <Store />
+                        </Route>
+                        <Route path="/dashboard">
+                            <Dashboard />
+                        </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="/register">
+                            <Register />
+                        </Route>
+                        <Route path="*">
+                            <NotFound />
+                        </Route>
+                    </Switch>
+                    <Footer />
+                </Router>
+            </AuthProvider>
         </div >
     );
 }
