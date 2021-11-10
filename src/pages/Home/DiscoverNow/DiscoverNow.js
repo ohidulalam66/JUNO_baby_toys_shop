@@ -14,7 +14,7 @@ const DiscoverNow = () => {
     })
     return (
         <>
-            <div className="discoverNow-bg py-3">
+            <div className="all-bg py-3">
                 <Container>
                     <Row className="d-flex align-items-center">
                         <Col xs={12} md={6}>

@@ -11,6 +11,8 @@ import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 import Store from './pages/Store/Store';
 import Dashboard from './pages/Home/Dashboard/Dashboard';
+import Login from './pages/Secure/Login/Login';
+import Register from './pages/Secure/Register/Register';
 
 function App() {
     return (
@@ -31,6 +33,10 @@ function App() {
                         <Dashboard />
                     </Route>
                     <Route path="/login">
+                        <Login />
+                    </Route>
+                    <Route path="/register">
+                        <Register />
                     </Route>
                     <Route path="*">
                         <NotFound />
