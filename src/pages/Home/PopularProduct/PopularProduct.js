@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import './Store.css';
+import './PopularProduct.css';
 
-const Store = ({ storeProduct }) => {
-    const { image, name, price } = storeProduct;
+
+const PopularProduct = ({ popularProduct }) => {
+    const { image, name, price } = popularProduct;
     return (
         <>
             <Col>
@@ -22,4 +23,4 @@ const Store = ({ storeProduct }) => {
     );
 };
 
-export default Store;
+export default PopularProduct;

@@ -28,7 +28,6 @@ const Dashboard = () => {
             <div className="topMargin">
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>
-                        <img src="https://i.im.ge/2021/11/10/oYTSXP.png" alt="" />
                         {/* user panel */}
                         <h3 className="panel-heading">User Panel</h3>
                         {/* admin panel */}
@@ -48,6 +47,7 @@ const Dashboard = () => {
                             <Link to={`${url}/manageProducts`}><button className="dashboard-link">Manage Products</button></Link>
                             <Link to={`${url}/addProducts`}><button className="dashboard-link">Add Products</button></Link>
                             <Link to={`${url}/makeAdmin`}><button className="dashboard-link">Make Admin</button></Link>
+                            <img className="w-50 mx-auto" src="https://i.im.ge/2021/11/10/oYTSXP.png" alt="" />
                         </Stack>
                     </Offcanvas.Body>
                 </Offcanvas>
@@ -84,7 +84,7 @@ const Dashboard = () => {
                         <MakeAdmin />
                     </Route>
                 </Switch>
-                <button className="main-dashboard-link my-5" onClick={handleShow}>Open Drawer</button>
+                <button className="main-dashboard-link my-5" onClick={handleShow}><i className="fas fa-arrow-left hover-icon"></i> Open Drawer</button>
             </div>
         </>
     );

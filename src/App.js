@@ -9,7 +9,7 @@ import Navigation from './pages/Shared/Navigation/Navigation';
 import Footer from './pages/Shared/Footer/Footer';
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
-import Store from './pages/Store/Store';
+import Stores from './pages/Stores/Stores';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Secure/Login/Login';
 import Register from './pages/Secure/Register/Register';
@@ -29,11 +29,15 @@ function App() {
                         <Route path="/home">
                             <Home />
                         </Route>
-                        <Route path="/store">
-                            <Store />
+                        <Route path="/stores">
+                            <Stores />
                         </Route>
                         <PrivateRoute path="/dashboard">
                             <Dashboard />
+                        </PrivateRoute>
+                        <PrivateRoute exact path="/booking">
+                        </PrivateRoute>
+                        <PrivateRoute path="/purchase/:productsId">
                         </PrivateRoute>
                         <Route path="/login">
                             <Login />

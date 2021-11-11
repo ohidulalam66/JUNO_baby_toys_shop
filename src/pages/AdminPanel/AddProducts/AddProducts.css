@@ -1,0 +1,23 @@
+form input ,textarea{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #adc47c;
+    border: none;
+    border-radius: 20px;
+}
+
+.btn-link{
+    color: #F2635F;
+    background: #19D3AE;
+    text-decoration: none;
+    width: auto;
+}
+
+.btn-link:hover {
+    color: #19D3AE;
+    background: #FFD661;
+}

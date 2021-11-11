@@ -7,10 +7,10 @@ const DiscoverNow = () => {
     const styles = useSpring({
         loop: true,
         to: [
-            { color: '#FECB1A' },
-            { color: '#AF382A' },
+            { color: '#74E0FE' },
+            { color: '#E9282B' },
         ],
-        from: { color: '#FE73C5' },
+        from: { color: '#8FBE2D' },
     })
     return (
         <>
