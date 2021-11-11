@@ -14,8 +14,8 @@ const Stores = () => {
     }, []);
     return (
         <>
-            <div className="PopularStor-bg">
-                <p className="text-danger topMargin pt-5" >IN STORE JUNO TOYS & GAMES</p>
+            <div className="PopularStore-bg">
+                <p className="text-danger topMargin" >IN STORE JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">In Store</h2>
                 <Container>
                     <Row xs={1} md={3} className="g-4 py-5 mb-5">

@@ -15,6 +15,7 @@ import Login from './pages/Secure/Login/Login';
 import Register from './pages/Secure/Register/Register';
 import AuthProvider from './pages/Shared/context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Secure/PrivateRoute/PrivateRoute';
+import Shop from './pages/Shop/Shop';
 
 function App() {
     return (
@@ -35,9 +36,10 @@ function App() {
                         <PrivateRoute path="/dashboard">
                             <Dashboard />
                         </PrivateRoute>
-                        <PrivateRoute exact path="/booking">
+                        <PrivateRoute exact path="/shop">
                         </PrivateRoute>
-                        <PrivateRoute path="/purchase/:productsId">
+                        <PrivateRoute path="/shop/:productId">
+                            <Shop />
                         </PrivateRoute>
                         <Route path="/login">
                             <Login />

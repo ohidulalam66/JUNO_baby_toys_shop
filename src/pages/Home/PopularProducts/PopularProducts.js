@@ -15,7 +15,7 @@ const PopularProducts = () => {
 
     return (
         <>
-            <div className="PopularStor-bg">
+            <div className="PopularStore-bg">
                 <p className="topMargin text-danger pt-5" >POPULAR PRODUCT JUNO TOYS &  GAMES</p>
                 <h2 className="all-heading">Popular In Store</h2>
                 <Container>
