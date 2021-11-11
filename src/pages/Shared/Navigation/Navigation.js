@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 
 const Navigation = () => {
-    const { user } = useAuth();
+    const { user, logOut } = useAuth();
     return (
         <>
             <Navbar bg="light fixed-top" expand="lg">
@@ -19,14 +19,14 @@ const Navigation = () => {
                         </Nav>
                         {
                             user?.email ?
-                                <div>
+                                <div className="d-flex">
                                     <Nav.Link as={HashLink} to="/dashboard" className="text-secondary" >Dashboard</Nav.Link>
-                                    <Nav.Link className="text-secondary" >Log Out</Nav.Link>
+                                    <Nav.Link onClick={logOut} className="text-secondary">Logout</Nav.Link>
                                 </div>
                                 :
                                 <Nav.Link as={HashLink} className="text-secondary" to="/login">Login</Nav.Link>
                         }
-                        <img src={user.urlProfile} alt="" />
+                        <img style={{ width: '35px', borderRadius: '50%' }} src={user.photoURL} alt="" />
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

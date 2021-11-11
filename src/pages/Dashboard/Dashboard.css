@@ -12,13 +12,16 @@
 }
 
 .dashboard-link {
-    padding: 20px 80px;
+    padding: 10px;
     margin: auto;
     border: none;
     width: 100%;
+    color: #F2635F;
 }
 
 .dashboard-link:hover {
     color: #19D3AE;
     background: #FFD661;
 }
+
+

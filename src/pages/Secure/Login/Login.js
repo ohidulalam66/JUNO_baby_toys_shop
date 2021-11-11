@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Col, Container, FloatingLabel, Form, Row, Spinner } from 'react-bootstrap';
+import { Alert, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
@@ -7,7 +7,7 @@ import './Login.css';
 
 const Login = () => {
     const [logInData, setLogInData] = useState({});
-    const { user, loginUser, loading, error } = useAuth();
+    const { user, loginUser, signInWithGoogle, loading, error } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -24,6 +24,10 @@ const Login = () => {
         loginUser(logInData.email, logInData.password, location, history);
         e.preventDefault();
     };
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
+    };
     return (
         <>
             <Container>
@@ -33,37 +37,31 @@ const Login = () => {
                     <Col sx={12} md={6}>
                         <img className="w-100" src="https://i.im.ge/2021/11/10/oYrBLG.png" alt="" />
                     </Col>
-                    <Col sx={12} md={6} className="all-bg p-5">
+                    <Col sx={12} md={6} className="form-bg p-5">
                         <form onSubmit={handleLoginSubmit}>
-                            <FloatingLabel
-                                required
-                                label="Email*"
+                            <p className="text-start"><i className="fas fa-envelope icon"></i></p>
+                            <Form.Control
+                                onBlur={handleOnBlur}
+                                type="email"
                                 name="email"
+                                placeholder="Your Email*" />
+                            <p className="text-start"><i className="fas fa-unlock-alt icon"></i></p>
+                            <Form.Control
                                 onBlur={handleOnBlur}
-                                className="my-3"
-                            >
-                                <Form.Control placeholder="name@example.com" type="email" />
-                            </FloatingLabel>
-                            <FloatingLabel
-                                required
-                                label="Password"
+                                type="password"
                                 name="password"
-                                onBlur={handleOnBlur}
-                                className="my-3"
-                            >
-                                <Form.Control placeholder="..." type="password" />
-                            </FloatingLabel>
-                            <button type="submit">LOGIN</button>
+                                placeholder="Password*" />
+                            <button className="my-3" type="submit">LOGIN</button>
                         </form>
-                        {loading && <Spinner size="md" animation="grow" />}
+                        {loading && <Spinner variant="danger" className="spinnerSize" animation="grow" />}
 
                         {user.email &&
-                            <Alert className="my-3" variant="success">Congress! Created Register Successfully.</Alert>}
+                            <Alert className="my-3 fontSize" variant="success">Congress! Login Successfully.</Alert>}
 
-                        {error && <Alert className="my-3" variant="danger">
+                        {error && <Alert className="my-3 fontSize" variant="danger">
                             {error}
                         </Alert>}
-                        <button className="my-3">Google Sign In</button>
+                        <button onClick={handleGoogleSignIn} className="my-3"><i className="fab fa-google icon"></i></button>
                         <Link className="text-decoration-none link-hover" to="/register">
                             <p>New User? Please, Register</p>
                         </Link>

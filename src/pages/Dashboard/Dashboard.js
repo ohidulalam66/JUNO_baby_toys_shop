@@ -7,13 +7,13 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import MyOrders from '../../UserPanel/MyOrders/MyOrders';
-import CheckOut from '../../UserPanel/CheckOut/CheckOut';
-import Review from '../../UserPanel/Review/Review';
-import ManageAllOrders from '../../AdminPanel/ManageAllOrders/ManageAllOrders';
-import ManageProducts from '../../AdminPanel/ManageProducts/ManageProducts';
-import AddProducts from '../../AdminPanel/AddProducts/AddProducts';
-import MakeAdmin from '../../AdminPanel/MakeAdmin/MakeAdmin';
+import MyOrders from '../UserPanel/MyOrders/MyOrders';
+import CheckOut from '../UserPanel/CheckOut/CheckOut';
+import Review from '../UserPanel/Review/Review';
+import ManageAllOrders from '../AdminPanel/ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../AdminPanel/ManageProducts/ManageProducts';
+import AddProducts from '../AdminPanel/AddProducts/AddProducts';
+import MakeAdmin from '../AdminPanel/MakeAdmin/MakeAdmin';
 
 
 const Dashboard = () => {

@@ -1,10 +1,33 @@
+.form-bg {
+    background-image: url("https://i.im.ge/2021/11/11/oYq4JK.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+}
+
 .all-heading {
     font-size: 40px;
     font-weight: 100;
 }
 
+.icon {
+    margin: 10px;
+    color: #88B92D;
+    font-size: 22px;
+}
+
 .topMargin {
     margin-top: 100px;
+}
+
+.spinnerSize {
+    width: 70px;
+    height: 70px;
+}
+
+.fontSize {
+    font-size: 10px;
 }
 
 .link-hover:hover {

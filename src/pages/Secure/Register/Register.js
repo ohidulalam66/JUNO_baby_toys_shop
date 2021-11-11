@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Col, Container, FloatingLabel, Form, Row, Spinner } from 'react-bootstrap';
+import { Alert, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import './Register.css';
@@ -14,9 +14,10 @@ const Register = () => {
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newLoginData = { ...RegisterData };
-        newLoginData[field] = value;
-        setRegisterData(newLoginData);
+        const newRegisterData = { ...RegisterData };
+        newRegisterData[field] = value;
+        console.log(newRegisterData)
+        setRegisterData(newRegisterData);
     };
 
     const handleRegisterSubmit = e => {
@@ -33,55 +34,43 @@ const Register = () => {
                 <p className="text-danger topMargin" >REGISTER JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">Register</h2>
                 <Row className="d-flex  align-items-center">
-                    <Col sx={12} md={6} className="all-bg p-5">
+                    <Col sx={12} md={6} className="form-bg p-5">
                         {!loading &&
                             <form onSubmit={handleRegisterSubmit}>
-                                <FloatingLabel
-                                    required
-                                    label="Name*"
+                                <p className="text-start"><i className="fas fa-user icon"></i></p>
+                                <Form.Control
+                                    onBlur={handleOnBlur}
+                                    type="name"
                                     name="name"
+                                    placeholder="Your Name*" />
+                                <p className="text-start"><i className="fas fa-envelope icon"></i></p>
+                                <Form.Control
                                     onBlur={handleOnBlur}
-                                    className="my-3"
-                                >
-                                    <Form.Control placeholder="name" type="name" />
-                                </FloatingLabel>
-                                <FloatingLabel
-                                    required
-                                    label="Email*"
+                                    type="email"
                                     name="email"
+                                    placeholder="Your Email*" />
+                                <p className="text-start"><i className="fas fa-unlock-alt icon"></i></p>
+                                <Form.Control
                                     onBlur={handleOnBlur}
-                                    className="my-3"
-                                >
-                                    <Form.Control placeholder="name@example.com" type="email" />
-                                </FloatingLabel>
-                                <FloatingLabel
-                                    required
-                                    label="Password*"
+                                    type="password"
                                     name="password"
+                                    placeholder="Password*" />
+                                <p className="text-start"><i className="fas fa-unlock-alt icon"></i></p>
+                                <Form.Control
                                     onBlur={handleOnBlur}
-                                    className="my-3"
-                                >
-                                    <Form.Control placeholder="..." type="password" />
-                                </FloatingLabel>
-                                <FloatingLabel
-                                    required
-                                    label="Re-Password*"
+                                    type="password"
                                     name="password2"
-                                    onBlur={handleOnBlur}
-                                    className="my-3"
-                                >
-                                    <Form.Control placeholder="..." type="password" />
-                                </FloatingLabel>
-                                <button type="submit">REGISTER</button>
+                                    placeholder="Re-Password*" />
+                                <button className="my-3" type="submit">REGISTER</button>
                             </form>
                         }
 
-                        {loading && <Spinner size="md" animation="grow" />}
+                        {loading && <Spinner variant="danger" className="spinnerSize" animation="grow" />}
 
                         {user.email &&
-                            <Alert className="my-3" variant="success">Congress! Created Register Successfully.</Alert>}
+                            <Alert className="my-3 fontSize" variant="success">Congress! Created Register Successfully.</Alert>}
 
-                        {error && <Alert className="my-3" variant="danger">
+                        {error && <Alert className="my-3 fontSize" variant="danger">
                             {error}
                         </Alert>}
 

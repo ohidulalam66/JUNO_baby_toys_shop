@@ -10,10 +10,11 @@ import Footer from './pages/Shared/Footer/Footer';
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 import Store from './pages/Store/Store';
-import Dashboard from './pages/Home/Dashboard/Dashboard';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Secure/Login/Login';
 import Register from './pages/Secure/Register/Register';
 import AuthProvider from './pages/Shared/context/AuthProvider/AuthProvider';
+import PrivateRoute from './pages/Secure/PrivateRoute/PrivateRoute';
 
 function App() {
     return (
@@ -31,9 +32,9 @@ function App() {
                         <Route path="/store">
                             <Store />
                         </Route>
-                        <Route path="/dashboard">
+                        <PrivateRoute path="/dashboard">
                             <Dashboard />
-                        </Route>
+                        </PrivateRoute>
                         <Route path="/login">
                             <Login />
                         </Route>
