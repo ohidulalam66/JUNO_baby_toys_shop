@@ -41,10 +41,10 @@ const ManageAllOrders = () => {
                             <thead className="table-header">
                                 <tr>
                                     <th>Product</th>
-                                    <th>Product Price</th>
+                                    <th>Customer Location</th>
                                     <th>Customer Email</th>
                                     <th>Product Quantity</th>
-                                    <th>Product Shipping</th>
+                                    <th>Shipping Charge</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

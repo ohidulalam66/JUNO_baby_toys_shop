@@ -17,7 +17,7 @@ const PopularProduct = ({ popularProduct }) => {
                             <h5>${price}</h5>
                         </Card.Text>
                         <Link to={`/shop/${_id}`}>
-                            <Button variant="light"><i className="fas fa-cart-plus"></i> Purchase</Button>
+                            <Button variant="btn btn-outline-info"><i className="fas fa-cart-plus"></i> Purchase</Button>
                         </Link>
                     </Card.Body>
                 </Card>

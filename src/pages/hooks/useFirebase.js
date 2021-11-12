@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -23,6 +24,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to database connect
+                saveUserToDb(email, name, 'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -60,6 +62,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 // save user to google Sign in database connect
+                saveUserToDb(user.email, user.displayName, 'PUT');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
             }).catch((error) => {
@@ -80,6 +83,26 @@ const useFirebase = () => {
 
     };
 
+    // save user to DB from register and google sign in
+    const saveUserToDb = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch("http://localhost:5000/users", {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    };
+
+    // DB in admin check
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user?.email])
+
     // observer user state
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -94,6 +117,7 @@ const useFirebase = () => {
     }, []);
     return {
         user,
+        admin,
         loading,
         registerUser,
         loginUser,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
+import { Alert, Col, Container, Form, Row, Spinner, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
@@ -51,9 +51,10 @@ const Login = () => {
                                 type="password"
                                 name="password"
                                 placeholder="Password*" />
-                            <button className="my-3" type="submit">LOGIN</button>
+                            <Button variant="success" className="my-3" type="submit">LOGIN</Button>
                         </form>
-                        {loading && <Spinner variant="danger" className="spinnerSize" animation="grow" />}
+
+                        {loading && <Spinner animation="border" variant="success" className="spinnerSize" />}
 
                         {user.email &&
                             <Alert className="my-3 fontSize" variant="success">Congress! Login Successfully.</Alert>}
@@ -61,9 +62,9 @@ const Login = () => {
                         {error && <Alert className="my-3 fontSize" variant="danger">
                             {error}
                         </Alert>}
-                        <button onClick={handleGoogleSignIn} className="my-3"><i className="fab fa-google icon"></i></button>
+                        <Button className="google-btn" variant="btn btn-outline-danger" onClick={handleGoogleSignIn}><i className="fab fa-google google-icon"></i></Button>
                         <Link className="text-decoration-none link-hover" to="/register">
-                            <p>New User? Please, Register</p>
+                            <Button variant="btn btn-outline-dark">New User? Please, Register</Button>
                         </Link>
                     </Col>
                 </Row>

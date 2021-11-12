@@ -5,8 +5,8 @@ import useAuth from '../../hooks/useAuth';
 
 
 
-const PrivateRoute = ({ children, ...rest }) => {
-    const { user, loading } = useAuth();
+const AdminRoute = ({ children, ...rest }) => {
+    const { admin, loading } = useAuth();
     if (loading) {
         return <Spinner animation="border" variant="success" className="spinnerSize" />
     }
@@ -15,11 +15,11 @@ const PrivateRoute = ({ children, ...rest }) => {
             <Route
                 {...rest}
                 render={({ location }) =>
-                    user?.email ? (children)
+                    admin ? (children)
                         :
                         (<Redirect
                             to={{
-                                pathname: "/login",
+                                pathname: "/",
                                 state: { from: location }
                             }}
                         />
@@ -30,4 +30,4 @@ const PrivateRoute = ({ children, ...rest }) => {
     );
 };
 
-export default PrivateRoute;
+export default AdminRoute;

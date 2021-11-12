@@ -1,5 +1,5 @@
 import { HashLink } from 'react-router-hash-link';
-import { Container, Nav, Navbar, OverlayTrigger, Stack, Tooltip } from 'react-bootstrap';
+import { Container, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 
 const Navigation = () => {
@@ -13,19 +13,18 @@ const Navigation = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto">
-                            <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/stores">Stores</Nav.Link>
-                        </Nav>
-                        <Stack direction="horizontal" gap={3}>
+                        <Nav className="ms-auto">
+                            <Nav.Link as={HashLink} to="/home" className="mx-2">Home</Nav.Link>
+                            <Nav.Link as={HashLink} to="/stores" className="mx-2">Stores</Nav.Link>
+                            {/* <Stack direction="horizontal" gap={3}> */}
                             {
                                 user?.email ?
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <Nav.Link as={HashLink} to="/dashboard" className="text-secondary" >Dashboard</Nav.Link>
-                                        <Nav.Link onClick={logOut} className="text-secondary">Logout</Nav.Link>
+                                        <Nav.Link as={HashLink} to="/dashboard" className=" mx-2" >Dashboard</Nav.Link>
+                                        <Nav.Link onClick={logOut} className="d-block">Logout</Nav.Link>
                                     </div>
                                     :
-                                    <Nav.Link as={HashLink} className="text-secondary" to="/login">Login</Nav.Link>
+                                    <Nav.Link as={HashLink} to="/login" className="mx-2">Login</Nav.Link>
                             }
                             {
                                 user?.photoURL ?
@@ -37,16 +36,18 @@ const Navigation = () => {
                                             <div {...triggerHandler}>
                                                 <img
                                                     ref={ref}
-                                                    style={{ width: '35px', borderRadius: '50%' }} alt=""
+                                                    style={{ width: '35px', borderRadius: '50%', marginLeft: '20px' }} alt=""
                                                     src={user?.photoURL}
                                                 />
                                             </div>
                                         )}
                                     </OverlayTrigger>
                                     :
-                                    <p>{user?.displayName}</p>
+                                    <p className="text-success">{user?.displayName}</p>
                             }
-                        </Stack>
+                            {/* </Stack> */}
+                        </Nav>
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

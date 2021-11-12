@@ -34,7 +34,7 @@ const Review = () => {
                     <input {...register("name")} defaultValue={user.displayName} />
                     <input {...register("email")} defaultValue={user.email} />
                     <textarea {...register("review")} placeholder="Your Comment" />
-                    <Button type="submit" variant="success"><i className="fas fa-comment-dots"></i> Review</Button>
+                    <Button type="submit" variant="outline-success"><i className="fas fa-comment-dots"></i> Review</Button>
                 </form>
             </Container>
         </>

@@ -11,7 +11,10 @@ const MyOrdersTable = ({ myOrder, handleDeleteOrder }) => {
                 <td>{price}</td>
                 <td>{quantity}</td>
                 <td>{shipping}</td>
-                <td className="d-flex justify-content-center  align-items-center"><Button disabled variant="outline-warning">Pending</Button><Button onClick={() => handleDeleteOrder(_id)} variant="outline-danger"><i className="fas fa-trash-alt"></i></Button></td>
+                <td className="d-flex justify-content-center  align-items-evenly">
+                    <Button disabled variant="outline-warning">Pending</Button>
+                    <Button className="ms-2" onClick={() => handleDeleteOrder(_id)} variant="outline-danger"><i className="fas fa-trash-alt"></i></Button>
+                </td>
             </tr>
         </>
     );

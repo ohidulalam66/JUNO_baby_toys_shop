@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
+import { Alert, Col, Container, Form, Row, Spinner, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import './Register.css';
@@ -34,7 +34,7 @@ const Register = () => {
                 <p className="text-danger topMargin" >REGISTER JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">Register</h2>
                 <Row className="d-flex  align-items-center">
-                    <Col sx={12} md={6} className="form-bg p-5">
+                    <Col sx={12} md={6} className="form-bg p-5 mb-5">
                         {!loading &&
                             <form onSubmit={handleRegisterSubmit}>
                                 <p className="text-start"><i className="fas fa-user icon"></i></p>
@@ -61,11 +61,11 @@ const Register = () => {
                                     type="password"
                                     name="password2"
                                     placeholder="Re-Password*" />
-                                <button className="my-3" type="submit">REGISTER</button>
+                                <Button variant="btn btn-outline-success" className="my-3" type="submit">REGISTER</Button>
                             </form>
                         }
 
-                        {loading && <Spinner variant="danger" className="spinnerSize" animation="grow" />}
+                        {loading && <Spinner animation="border" variant="success" className="spinnerSize" />}
 
                         {user.email &&
                             <Alert className="my-3 fontSize" variant="success">Congress! Created Register Successfully.</Alert>}
@@ -75,7 +75,7 @@ const Register = () => {
                         </Alert>}
 
                         <Link className="text-decoration-none link-hover mt-3" to="/login">
-                            <p className="mt-3">Already Register? Please, Login</p>
+                            <Button variant="btn btn-outline-dark" className="mt-2">Already Register? Please, Login</Button>
                         </Link>
                     </Col>
                     <Col sx={12} md={6}>

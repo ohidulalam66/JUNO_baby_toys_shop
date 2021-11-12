@@ -44,7 +44,7 @@ const MyOrders = () => {
                             <th>Product</th>
                             <th>Product Price</th>
                             <th>Product Quantity</th>
-                            <th>Product Shipping</th>
+                            <th>Shipping Charge</th>
                             <th>Action</th>
                         </tr>
                     </thead>

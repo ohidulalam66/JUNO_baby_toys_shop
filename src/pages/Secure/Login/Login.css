@@ -24,13 +24,22 @@
 .spinnerSize {
     width: 70px;
     height: 70px;
+    margin: 100px;
 }
 
 .fontSize {
     font-size: 10px;
 }
 
-.link-hover:hover {
-    color: red;
-    text-decoration: underline;
+.google-btn {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+
+}
+
+.google-icon {
+    display: block;
+    color:  #0F9D58;
+    font-size: 22px;
 }
