@@ -1,8 +1,8 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import CustomerReviews from '../CustomerReviews/CustomerReviews';
 import DiscoverNow from '../DiscoverNow/DiscoverNow';
 import PopularProducts from '../PopularProducts/PopularProducts';
-import ReviewPost from '../ReviewPost/ReviewPost';
 
 const Home = () => {
     return (
@@ -10,7 +10,7 @@ const Home = () => {
             <Banner />
             <PopularProducts />
             <DiscoverNow />
-            <ReviewPost />
+            <CustomerReviews />
         </>
     );
 };

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import './Shop.css';
@@ -55,14 +55,14 @@ const Shop = () => {
     };
     return (
         <>
-            <p className="text-danger topMargin" >SHOP JUNO TOYS & GAMES</p>
-            <h2 className="all-heading">Shop</h2>
-            <Container>
-                <Row xs={1} md={2} className="py-4 d-flex justify-content-between align-items-center">
+            <Container className="mb-4">
+                <p className="text-danger topMargin" >SHOP JUNO TOYS & GAMES</p>
+                <h2 className="all-heading">Shop</h2>
+                <Row xs={1} md={2} className="d-flex justify-content-between align-items-center">
                     <Col>
                         <img src={image} className="img-fluid w-75 mb-3 rounded" alt="" />
                         <p><span className="fw-bold text-decoration-underline">Description: </span>{description}</p>
-                        <h4 className="text-success">Categories: {categories}</h4>
+                        <h4 className="text-success"><span className="text-decoration-underline">Categories:</span> {categories}</h4>
                     </Col>
                     <Col>
                         <form className="shop py-3 " onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ const Shop = () => {
                                 <option value="5%/7D">Shipping 5%/7D</option>
                                 <option value="10%/3D">Shipping  10%/3D</option>
                             </select>
-                            <input className="place-order mt-5" type="submit" value="Place Order" />
+                            <Button className="mt-5" type="submit" variant="success"><i className="fas fa-shopping-basket"></i> Place Order</Button>
                         </form>
                     </Col>
                 </Row>

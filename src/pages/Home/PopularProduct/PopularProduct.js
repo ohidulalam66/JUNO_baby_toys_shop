@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './PopularProduct.css';
 
@@ -17,7 +17,7 @@ const PopularProduct = ({ popularProduct }) => {
                             <h5>${price}</h5>
                         </Card.Text>
                         <Link to={`/shop/${_id}`}>
-                            <button><i className="fas fa-cart-plus"></i> Purchase</button>
+                            <Button variant="light"><i className="fas fa-cart-plus"></i> Purchase</Button>
                         </Link>
                     </Card.Body>
                 </Card>

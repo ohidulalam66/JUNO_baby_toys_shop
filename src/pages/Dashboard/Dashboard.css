@@ -25,7 +25,6 @@
 }
 .hover-icon {
     display: none;
-    transition: margin-right 2s ease-in-out;
 }
 .main-dashboard-link:hover .hover-icon{
     display: inline;

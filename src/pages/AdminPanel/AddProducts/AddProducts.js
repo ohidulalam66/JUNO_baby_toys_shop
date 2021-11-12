@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './AddProducts.css';
 
@@ -24,16 +24,16 @@ const AddProducts = () => {
     };
     return (
         <>
-            <p className="topMargin text-danger" >ADD PRODUCTS JUNO TOYS &  GAMES</p>
-            <h2 className="all-heading">Add Products</h2>
-            <Container>
+            <Container className="my-4">
+                <p className="text-danger mt-4" >ADD PRODUCTS JUNO TOYS &  GAMES</p>
+                <h2 className="all-heading">Add Products</h2>
                 <form onSubmit={handleSubmit(handleProductsAdd)} className="mx-auto w-50 py-3 add-product">
                     <input {...register("name")} placeholder="Product Name" />
                     <input {...register("image")} placeholder="Product Image URL" />
                     <input {...register("price")} placeholder="Price" />
                     <input {...register("categories")} placeholder="Categories" />
                     <textarea {...register("description")} placeholder="Description" />
-                    <input type="submit" value="Add Products" className="btn-link" />
+                    <Button type="submit" variant="success">Add Products</Button>
                 </form>
             </Container>
         </>

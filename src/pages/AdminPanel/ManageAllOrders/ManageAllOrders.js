@@ -32,23 +32,23 @@ const ManageAllOrders = () => {
 
     return (
         <>
-            <Container>
-                <p className="topMargin text-danger" >MANAGE ALL ORDERS JUNO TOYS &  GAMES</p>
+            <Container className="my-4">
+                <p className="text-danger" >MANAGE ALL ORDERS JUNO TOYS &  GAMES</p>
                 <h2 className="all-heading">Manage All Orders</h2>
                 <Row>
                     <Col>
-                        <Table responsive="sm" striped bordered hover className="mt-5">
-                            <thead>
+                        <Table responsive="sm" bordered className="mt-5">
+                            <thead className="table-header">
                                 <tr>
                                     <th>Product</th>
-                                    <th>Customer Location</th>
+                                    <th>Product Price</th>
                                     <th>Customer Email</th>
                                     <th>Product Quantity</th>
                                     <th>Product Shipping</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="table-body">
                                 {
                                     orders.map(order =>
                                         <AllOrdersTable
