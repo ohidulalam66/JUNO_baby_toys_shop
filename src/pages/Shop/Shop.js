@@ -24,6 +24,7 @@ const Shop = () => {
     const locationRef = useRef();
     const priceRef = useRef();
     const quantityRef = useRef();
+    const shippingRef = useRef();
 
     const handleSubmit = e => {
 
@@ -33,7 +34,8 @@ const Shop = () => {
         const locationName = locationRef.current.value;
         const price = priceRef.current.value;
         const quantity = quantityRef.current.value;
-        const addNewInfo = { name, email, productName, price, locationName, quantity };
+        const shipping = shippingRef.current.value;
+        const addNewInfo = { name, email, productName, price, locationName, quantity, shipping };
 
         fetch(("http://localhost:5000/orders"), {
             method: 'POST',
@@ -45,7 +47,7 @@ const Shop = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId) {
-                    alert('Booked Successfully');
+                    alert('Purchase Successfully');
                     e.target.reset();
                 }
             })
@@ -53,34 +55,32 @@ const Shop = () => {
     };
     return (
         <>
-            <div className="PopularStore-bg">
-                <p className="text-danger topMargin" >SHOP JUNO TOYS & GAMES</p>
-                <h2 className="all-heading">Shop</h2>
-                <Container>
-                    <Row xs={1} md={2} className="py-4 d-flex justify-content-between align-items-center">
-                        <Col>
-                            <img src={image} className="img-fluid w-75 mb-3 rounded" alt="" />
-                            <p><span className="fw-bold text-decoration-underline">Description: </span>{description}</p>
-                            <h4 className="text-success">Categories: {categories}</h4>
-                        </Col>
-                        <Col>
-                            <form className="booking-form py-3" onSubmit={handleSubmit}>
-                                <input defaultValue={user.displayName} ref={nameRef} />
-                                <input defaultValue={user.email} ref={emailRef} />
-                                <input defaultValue={name} ref={productNameRef} />
-                                <input defaultValue={price} ref={priceRef} />
-                                <input type="text" ref={locationRef} placeholder="Your Location" />
-                                <input type="number" ref={quantityRef} placeholder="Quantity" />
-                                <select class="form-select" id="inputGroupSelect01">
-                                    <option selected>Shipping 5%/7D</option>
-                                    <option value="1">Shipping  10%/3D</option>
-                                </select>
-                                <input className="btn-link" type="submit" value="Place Order" />
-                            </form>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <p className="text-danger topMargin" >SHOP JUNO TOYS & GAMES</p>
+            <h2 className="all-heading">Shop</h2>
+            <Container>
+                <Row xs={1} md={2} className="py-4 d-flex justify-content-between align-items-center">
+                    <Col>
+                        <img src={image} className="img-fluid w-75 mb-3 rounded" alt="" />
+                        <p><span className="fw-bold text-decoration-underline">Description: </span>{description}</p>
+                        <h4 className="text-success">Categories: {categories}</h4>
+                    </Col>
+                    <Col>
+                        <form className="shop py-3 " onSubmit={handleSubmit}>
+                            <input defaultValue={user.displayName} ref={nameRef} />
+                            <input defaultValue={user.email} ref={emailRef} />
+                            <input defaultValue={name} ref={productNameRef} />
+                            <input defaultValue={price} ref={priceRef} />
+                            <input type="text" ref={locationRef} placeholder="Your Location" />
+                            <input type="number" min="1" max="10" ref={quantityRef} placeholder="Quantity" />
+                            <select className="form-select" ref={shippingRef} id="inputGroupSelect01">
+                                <option value="5%/7D">Shipping 5%/7D</option>
+                                <option value="10%/3D">Shipping  10%/3D</option>
+                            </select>
+                            <input className="place-order mt-5" type="submit" value="Place Order" />
+                        </form>
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 };

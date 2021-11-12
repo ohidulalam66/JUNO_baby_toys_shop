@@ -1,0 +1,21 @@
+.shop input ,textarea, select, option {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.place-order {
+    color: #F2635F;
+    background: #19D3AE;
+    text-decoration: none;
+    width: auto;
+    border: none;
+}
+
+.place-order:hover {
+    color: #19D3AE;
+    background: #FFD661;
+}

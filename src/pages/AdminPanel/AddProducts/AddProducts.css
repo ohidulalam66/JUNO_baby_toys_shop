@@ -1,4 +1,4 @@
-form input ,textarea{
+.add-product input ,textarea, select, option {
     display: flex;
     flex-direction: column;
     margin: auto;

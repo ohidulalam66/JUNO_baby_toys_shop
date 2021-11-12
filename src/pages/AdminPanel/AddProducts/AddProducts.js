@@ -27,7 +27,7 @@ const AddProducts = () => {
             <p className="topMargin text-danger" >ADD PRODUCTS JUNO TOYS &  GAMES</p>
             <h2 className="all-heading">Add Products</h2>
             <Container>
-                <form onSubmit={handleSubmit(handleProductsAdd)} className="mx-auto w-50 py-3">
+                <form onSubmit={handleSubmit(handleProductsAdd)} className="mx-auto w-50 py-3 add-product">
                     <input {...register("name")} placeholder="Product Name" />
                     <input {...register("image")} placeholder="Product Image URL" />
                     <input {...register("price")} placeholder="Price" />
