@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Col, Container, Form, Row, Spinner, Button } from 'react-bootstrap';
+import { Col, Container, Form, Row, Spinner, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
@@ -21,13 +21,14 @@ const Login = () => {
     };
 
     const handleLoginSubmit = e => {
-        loginUser(logInData.email, logInData.password, location, history);
+        loginUser(logInData.email, logInData.password, location, history)
         e.preventDefault();
     };
 
     const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
     };
+
     return (
         <>
             <Container>
@@ -51,13 +52,14 @@ const Login = () => {
                                 type="password"
                                 name="password"
                                 placeholder="Password*" />
-                            <Button variant="success" className="my-3" type="submit">LOGIN</Button>
+                            <Button type="submit" variant="btn btn-outline-success" className="my-3">LOGIN</Button>
                         </form>
 
                         {loading && <Spinner animation="border" variant="success" className="spinnerSize" />}
 
                         {user.email &&
-                            <Alert className="my-3 fontSize" variant="success">Congress! Login Successfully.</Alert>}
+                            <Alert className="my-3 fontSize" variant="success">Congress! Created Register Successfully.</Alert>
+                        }
 
                         {error && <Alert className="my-3 fontSize" variant="danger">
                             {error}

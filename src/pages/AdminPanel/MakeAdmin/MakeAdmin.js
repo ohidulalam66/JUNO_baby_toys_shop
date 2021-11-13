@@ -2,12 +2,14 @@ import React from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './MakeAdmin.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const handleMakeAdmin = data => {
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://thawing-beach-22228.herokuapp.com/users/admin', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -16,8 +18,10 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(result => {
-                if (result.modifiedCount) {
-                    alert("Make Admin");
+                if (result.matchedCount) {
+                    toast.success("Make Admin", {
+                        position: "top-center",
+                    });
                     reset();
                 }
             })
@@ -31,6 +35,7 @@ const MakeAdmin = () => {
                     <input {...register("email")} placeholder="Email" />
                     <Button type="submit" variant="outline-success"><i className="fas fa-user-shield"></i> Make Admin</Button>
                 </form>
+                <ToastContainer />
             </Container>
         </>
     );

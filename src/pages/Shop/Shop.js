@@ -4,6 +4,8 @@ import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import './Shop.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Shop = () => {
     const { productId } = useParams();
@@ -12,7 +14,7 @@ const Shop = () => {
     const { name, image, description, categories, price } = product;
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${productId}`;
+        const url = `https://thawing-beach-22228.herokuapp.com/products/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -37,7 +39,7 @@ const Shop = () => {
         const shipping = shippingRef.current.value;
         const addNewInfo = { name, email, productName, price, locationName, quantity, shipping };
 
-        fetch(("http://localhost:5000/orders"), {
+        fetch(("https://thawing-beach-22228.herokuapp.com/orders"), {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +49,9 @@ const Shop = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId) {
-                    alert('Purchase Successfully');
+                    toast.success(`Congress!${name}. It's Your.`, {
+                        position: "top-center",
+                    });
                     e.target.reset();
                 }
             })
@@ -66,18 +70,19 @@ const Shop = () => {
                     </Col>
                     <Col>
                         <form className="shop py-3 " onSubmit={handleSubmit}>
-                            <input defaultValue={user.displayName} ref={nameRef} />
-                            <input defaultValue={user.email} ref={emailRef} />
-                            <input defaultValue={name} ref={productNameRef} />
-                            <input defaultValue={price} ref={priceRef} />
+                            <input disabled defaultValue={user.displayName} ref={nameRef} />
+                            <input disabled defaultValue={user.email} ref={emailRef} />
+                            <input disabled defaultValue={name} ref={productNameRef} />
+                            <input disabled defaultValue={price} ref={priceRef} />
                             <input type="text" ref={locationRef} placeholder="Your Location" />
                             <input type="number" min="1" max="10" ref={quantityRef} placeholder="Quantity" />
                             <select className="form-select" ref={shippingRef} id="inputGroupSelect01">
                                 <option value="5%/7D">Shipping 5%/7D</option>
                                 <option value="10%/3D">Shipping  10%/3D</option>
                             </select>
-                            <Button className="mt-5" type="submit" variant="success"><i className="fas fa-shopping-basket"></i> Place Order</Button>
+                            <Button className="mt-5" type="submit" variant="btn btn-outline-success"><i className="fas fa-shopping-basket"></i> Place Order</Button>
                         </form>
+                        <ToastContainer />
                     </Col>
                 </Row>
             </Container>

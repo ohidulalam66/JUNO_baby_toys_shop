@@ -7,7 +7,7 @@ const CustomerReviews = () => {
     const [customerReviews, setCustomerReviews] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:5000/reviews";
+        const url = "https://thawing-beach-22228.herokuapp.com/reviews";
         fetch(url)
             .then(res => res.json())
             .then(data => setCustomerReviews(data.slice(0, 6)))

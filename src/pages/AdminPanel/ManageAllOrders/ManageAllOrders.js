@@ -2,32 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { Container, Table, Row, Col } from 'react-bootstrap';
 import AllOrdersTable from '../AllOrdersTable/AllOrdersTable';
 import './ManageAllOrders.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("https://thawing-beach-22228.herokuapp.com/orders")
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
 
     const handleDeleteOrder = id => {
-        const proceed = window.confirm("Are you sure, you want to your client order Delete?");
-        if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert("Canceled SuccessFully")
-                        const remainingOrder = orders.filter(user => user._id !== id);
-                        setOrders(remainingOrder);
-                    };
-                });
-        };
+        // const proceed = window.confirm("Are you sure, you want to your client order Delete?");
+        // if (proceed) {
+        const url = `https://thawing-beach-22228.herokuapp.com/orders/${id}`;
+        fetch(url, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success("Canceled SuccessFully", {
+                        position: "top-center",
+                    });
+                    const remainingOrder = orders.filter(user => user._id !== id);
+                    setOrders(remainingOrder);
+                };
+            });
+        // };
     };
 
     return (
@@ -63,6 +67,7 @@ const ManageAllOrders = () => {
                         </Table>
                     </Col>
                 </Row>
+                <ToastContainer />
             </Container>
         </>
     );

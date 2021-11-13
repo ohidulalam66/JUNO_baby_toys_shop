@@ -2,12 +2,14 @@ import React from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './AddProducts.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProducts = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const handleProductsAdd = data => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://thawing-beach-22228.herokuapp.com/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -17,7 +19,9 @@ const AddProducts = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId) {
-                    alert("Product Added");
+                    toast.success("Add Product", {
+                        position: "top-center",
+                    });
                     reset();
                 }
             })
@@ -33,8 +37,9 @@ const AddProducts = () => {
                     <input {...register("price")} placeholder="Price" />
                     <input {...register("categories")} placeholder="Categories" />
                     <textarea {...register("description")} placeholder="Description" />
-                    <Button type="submit" variant="success">Add Products</Button>
+                    <Button type="submit" variant="btn btn-outline-success"><i className="fas fa-puzzle-piece"></i> Add Products</Button>
                 </form>
+                <ToastContainer />
             </Container>
         </>
     );

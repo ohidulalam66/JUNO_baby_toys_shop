@@ -68,7 +68,8 @@ const Register = () => {
                         {loading && <Spinner animation="border" variant="success" className="spinnerSize" />}
 
                         {user.email &&
-                            <Alert className="my-3 fontSize" variant="success">Congress! Created Register Successfully.</Alert>}
+                            <Alert className="my-3 fontSize" variant="success">Congress! Created Register Successfully.</Alert>
+                        }
 
                         {error && <Alert className="my-3 fontSize" variant="danger">
                             {error}

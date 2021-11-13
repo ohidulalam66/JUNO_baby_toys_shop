@@ -7,7 +7,7 @@ const Stores = () => {
     const [storeProducts, setStoreProducts] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:5000/products";
+        const url = "https://thawing-beach-22228.herokuapp.com/products";
         fetch(url)
             .then(res => res.json())
             .then(data => setStoreProducts(data.slice(6)))
@@ -18,7 +18,7 @@ const Stores = () => {
                 <p className="text-danger topMargin" >IN STORE JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">In Store</h2>
                 <Container>
-                    <Row xs={1} md={3} className="g-4 py-5 mb-5">
+                    <Row xs={1} md={3} className="g-4 py-5">
                         {
                             storeProducts.map(storeProduct =>
                                 <Store

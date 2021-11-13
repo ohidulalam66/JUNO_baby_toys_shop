@@ -1,3 +1,6 @@
+/* .main-dashboard-link {
+    margin-top: 200px;
+} */
 .panel-heading {
     color: #E03645;
 }
@@ -24,9 +27,6 @@
 }
 .hover-icon {
     display: none;
-}
-.main-dashboard-link:hover .hover-icon{
-    display: inline;
 }
 
 

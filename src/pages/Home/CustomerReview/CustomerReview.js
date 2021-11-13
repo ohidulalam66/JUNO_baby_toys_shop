@@ -7,7 +7,7 @@ const CustomerReview = ({ customerReview }) => {
     return (
         <>
             <Col>
-                <Card className="product-card">
+                <Card className="product-card h-100">
                     <Card.Body>
                         <Card.Title><h5>{name}</h5></Card.Title>
                         <Card.Text>

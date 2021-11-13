@@ -3,6 +3,8 @@ import { Container, Table } from 'react-bootstrap';
 import MyOrdersTable from '../MyOrdersTable/MyOrdersTable';
 import useAuth from '../../hooks/useAuth';
 import './MyOrders.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyOrders = () => {
     const { user } = useAuth();
@@ -10,27 +12,29 @@ const MyOrders = () => {
     console.log(myOrders)
 
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("https://thawing-beach-22228.herokuapp.com/orders")
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, []);
 
     const handleDeleteOrder = id => {
-        const proceed = window.confirm("Are you sure, you want to your client order Delete?");
-        if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert("Canceled SuccessFully")
-                        const remainingOrder = myOrders.filter(user => user._id !== id);
-                        setMyOrders(remainingOrder);
-                    };
-                });
-        };
+        // const proceed = toast.success("Are you sure, you want to your client order Delete?");
+        // if (proceed) {
+        const url = `https://thawing-beach-22228.herokuapp.com/orders/${id}`;
+        fetch(url, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success("Canceled SuccessFully", {
+                        position: "top-center",
+                    });
+                    const remainingOrder = myOrders.filter(user => user._id !== id);
+                    setMyOrders(remainingOrder);
+                };
+            });
+        // };
     };
 
     return (
@@ -61,6 +65,7 @@ const MyOrders = () => {
                         }
                     </tbody>
                 </Table>
+                <ToastContainer />
             </Container>
         </>
     );

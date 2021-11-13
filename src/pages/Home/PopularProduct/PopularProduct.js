@@ -20,7 +20,7 @@ const PopularProduct = ({ popularProduct }) => {
                         </Card.Text>
                         {
                             admin ?
-                                <Link to="">
+                                <Link to="/dashboard/manageProducts">
                                     <Button variant="btn btn-outline-success"><i className="fas fa-wrench"></i> Update</Button>
                                 </Link>
                                 :

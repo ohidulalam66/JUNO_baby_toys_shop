@@ -7,7 +7,7 @@ const PopularProducts = () => {
     const [popularProducts, setPopularProducts] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:5000/products";
+        const url = "https://thawing-beach-22228.herokuapp.com/products";
         fetch(url)
             .then(res => res.json())
             .then(data => setPopularProducts(data.slice(0, 6)))

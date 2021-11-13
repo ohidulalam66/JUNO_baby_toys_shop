@@ -4,7 +4,7 @@ import './AllOrdersTable.css';
 
 const AllOrdersTable = ({ order, handleDeleteOrder }) => {
     const { _id, productName, locationName, email, quantity, shipping } = order;
-    console.log(_id)
+
     return (
         <>
             <tr>

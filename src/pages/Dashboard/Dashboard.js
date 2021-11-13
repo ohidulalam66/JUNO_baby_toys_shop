@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Offcanvas, Stack, Button } from 'react-bootstrap';
+import { Offcanvas, Stack } from 'react-bootstrap';
 import './Dashboard.css';
 import {
     Switch,
-    Route,
     Link,
     useRouteMatch
 } from "react-router-dom";
@@ -29,7 +28,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <Button variant="outline-success" className="main-dashboard-link me-auto topMargin" onClick={handleShow}><i className="fas fa-arrow-left hover-icon"></i> Open Drawer</Button>
+            <DashboardHome handleShow={handleShow} />
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
                     {admin ?
@@ -65,9 +64,6 @@ const Dashboard = () => {
             </Offcanvas>
             {/* user panel */}
             <Switch>
-                <Route exact path={path}>
-                    <DashboardHome />
-                </Route>
                 <UserRoute path={`${path}/myOrders`}>
                     <MyOrders />
                 </UserRoute>
@@ -77,9 +73,7 @@ const Dashboard = () => {
                 <UserRoute path={`${path}/review`}>
                     <Review />
                 </UserRoute>
-                {/* <UserRoute exact path={path}>
-                    <DashboardHome />
-                </UserRoute> */}
+                {/* Admin panel */}
                 <AdminRoute path={`${path}/manageAllOrders`}>
                     <ManageAllOrders />
                 </AdminRoute>
