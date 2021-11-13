@@ -36,8 +36,8 @@ const Review = () => {
                 <p className="text-danger" >MY REVIEW JUNO TOYS &  GAMES</p>
                 <h2 className="all-heading">My Review</h2>
                 <form onSubmit={handleSubmit(handleReviewAdd)} className="mx-auto w-50 py-3 add-product">
-                    <input {...register("name")} disabled defaultValue={user.displayName} />
-                    <input {...register("email")} disabled defaultValue={user.email} />
+                    <input {...register("name")} defaultValue={user.displayName} />
+                    <input {...register("email")} defaultValue={user.email} />
                     <textarea {...register("review")} placeholder="Your Comment" />
                     <Button type="submit" variant="outline-success"><i className="fas fa-comment-dots"></i> Review</Button>
                 </form>
