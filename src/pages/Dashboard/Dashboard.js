@@ -16,6 +16,8 @@ import AddProducts from '../AdminPanel/AddProducts/AddProducts';
 import MakeAdmin from '../AdminPanel/MakeAdmin/MakeAdmin';
 import useAuth from '../hooks/useAuth';
 import AdminRoute from '../Secure/AdminRoute/AdminRoute';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import UserRoute from '../Secure/UserRoute/UserRoute';
 
 
 const Dashboard = () => {
@@ -64,23 +66,20 @@ const Dashboard = () => {
             {/* user panel */}
             <Switch>
                 <Route exact path={path}>
-                    <MyOrders />
+                    <DashboardHome />
                 </Route>
-                <Route path={`${path}/myOrders`}>
+                <UserRoute path={`${path}/myOrders`}>
                     <MyOrders />
-                </Route>
-                <Route path={`${path}/checkOut`}>
+                </UserRoute>
+                <UserRoute path={`${path}/checkOut`}>
                     <CheckOut />
-                </Route>
-                <Route path={`${path}/review`}>
+                </UserRoute>
+                <UserRoute path={`${path}/review`}>
                     <Review />
-                </Route>
-            </Switch>
-            {/* admin panel */}
-            <Switch>
-                <AdminRoute exact path={path}>
-                    <ManageAllOrders />
-                </AdminRoute>
+                </UserRoute>
+                {/* <UserRoute exact path={path}>
+                    <DashboardHome />
+                </UserRoute> */}
                 <AdminRoute path={`${path}/manageAllOrders`}>
                     <ManageAllOrders />
                 </AdminRoute>

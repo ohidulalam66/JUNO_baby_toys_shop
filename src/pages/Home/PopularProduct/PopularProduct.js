@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './PopularProduct.css';
 
 
 const PopularProduct = ({ popularProduct }) => {
     const { _id, image, name, price } = popularProduct;
+    const { admin } = useAuth();
     return (
         <>
             <Col>
@@ -16,9 +18,16 @@ const PopularProduct = ({ popularProduct }) => {
                         <Card.Text>
                             <h5>${price}</h5>
                         </Card.Text>
-                        <Link to={`/shop/${_id}`}>
-                            <Button variant="btn btn-outline-info"><i className="fas fa-cart-plus"></i> Purchase</Button>
-                        </Link>
+                        {
+                            admin ?
+                                <Link to="">
+                                    <Button variant="btn btn-outline-success"><i className="fas fa-wrench"></i> Update</Button>
+                                </Link>
+                                :
+                                <Link to={`/shop/${_id}`}>
+                                    <Button variant="btn btn-outline-info"><i className="fas fa-cart-plus"></i> Purchase</Button>
+                                </Link>
+                        }
                     </Card.Body>
                 </Card>
             </Col>
