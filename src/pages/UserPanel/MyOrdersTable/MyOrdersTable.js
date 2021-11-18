@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import './MyOrdersTable.css';
 
 const MyOrdersTable = ({ myOrder, handleDeleteOrder }) => {
-    const { _id, productName, price, quantity, shipping } = myOrder;
+    const { _id, productName, price, quantity, shipping, status } = myOrder;
     return (
         <>
             <tr>
@@ -12,7 +12,7 @@ const MyOrdersTable = ({ myOrder, handleDeleteOrder }) => {
                 <td>{quantity}</td>
                 <td>{shipping}</td>
                 <td className="d-flex justify-content-center  align-items-evenly">
-                    <Button disabled variant="outline-warning">Pending</Button>
+                    <Button disabled variant="outline-warning">{status}</Button>
                     <Button className="ms-2" onClick={() => handleDeleteOrder(_id)} variant="outline-danger"><i className="fas fa-trash-alt"></i></Button>
                 </td>
             </tr>

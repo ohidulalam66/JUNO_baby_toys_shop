@@ -17,6 +17,10 @@ import AuthProvider from './pages/Shared/context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Secure/PrivateRoute/PrivateRoute';
 import Shop from './pages/Shop/Shop';
 import DashboardHome from './pages/DashboardHome/DashboardHome';
+import LearnMore from './pages/Home/LearnMore/LearnMore';
+import UpdateProduct from './pages/AdminPanel/UpdateProduct/UpdateProduct';
+import AdminRoute from './pages/Secure/AdminRoute/AdminRoute';
+// import AdminRoute from './pages/Secure/AdminRoute/AdminRoute';
 
 function App() {
     return (
@@ -31,6 +35,9 @@ function App() {
                         <Route path="/home">
                             <Home />
                         </Route>
+                        <Route path="/learnMore">
+                            <LearnMore />
+                        </Route>
                         <Route path="/stores">
                             <Stores />
                         </Route>
@@ -43,6 +50,9 @@ function App() {
                         <PrivateRoute path="/shop/:productId">
                             <Shop />
                         </PrivateRoute>
+                        <AdminRoute exact path="/updateProducts/:id">
+                            <UpdateProduct />
+                        </AdminRoute>
                         <Route path="/login">
                             <Login />
                         </Route>

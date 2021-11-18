@@ -27,6 +27,7 @@ const Shop = () => {
     const priceRef = useRef();
     const quantityRef = useRef();
     const shippingRef = useRef();
+    const statusRef = useRef();
 
     const handleSubmit = e => {
 
@@ -37,7 +38,8 @@ const Shop = () => {
         const price = priceRef.current.value;
         const quantity = quantityRef.current.value;
         const shipping = shippingRef.current.value;
-        const addNewInfo = { name, email, productName, price, locationName, quantity, shipping };
+        const status = statusRef.current.value;
+        const addNewInfo = { name, email, productName, price, locationName, quantity, shipping, status };
 
         fetch(("https://thawing-beach-22228.herokuapp.com/orders"), {
             method: 'POST',
@@ -75,7 +77,8 @@ const Shop = () => {
                             <input disabled defaultValue={name} ref={productNameRef} />
                             <input disabled defaultValue={price} ref={priceRef} />
                             <input type="text" ref={locationRef} placeholder="Your Location" />
-                            <input type="number" min="1" max="10" ref={quantityRef} placeholder="Quantity" />
+                            <input type="number" min="1" max="10" ref={quantityRef} defaultValue={1} />
+                            <input type="text" ref={statusRef} disabled defaultValue="pending" />
                             <select className="form-select" ref={shippingRef} id="inputGroupSelect01">
                                 <option value="5%/7D">Shipping 5%/7D</option>
                                 <option value="10%/3D">Shipping  10%/3D</option>

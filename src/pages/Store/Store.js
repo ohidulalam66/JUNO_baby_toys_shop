@@ -19,9 +19,9 @@ const Store = ({ storeProduct }) => {
                         </Card.Text>
                         {
                             admin ?
-                                <Link to="">
-                                    <Button variant="btn btn-outline-success"><i className="fas fa-wrench"></i> Update</Button>
-                                </Link>
+                                <p>
+                                    <i className="fas fa-wrench"></i> You are a Admin, Manage Products/ <span className="text-success">Update</span>!
+                                </p>
                                 :
                                 <Link to={`/shop/${_id}`}>
                                     <Button variant="btn btn-outline-info"><i className="fas fa-cart-plus"></i> Purchase</Button>

@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import './AllOrdersTable.css';
 
 const AllOrdersTable = ({ order, handleDeleteOrder }) => {
-    const { _id, productName, locationName, email, quantity, shipping } = order;
+    const { _id, productName, locationName, email, quantity, shipping, status } = order;
 
     return (
         <>
@@ -14,12 +14,13 @@ const AllOrdersTable = ({ order, handleDeleteOrder }) => {
                 <td>{quantity}</td>
                 <td>{shipping}</td>
                 <td className="d-flex justify-content-center  align-items-center">
-                    <Form.Select size="sm">
-                        <option className="text-danger">Pending</option>
+                    <select className="w-100">
+                        <option className="text-danger">{status}</option>
+                        <option className="text-success">Is Going</option>
                         <option className="text-success">Shipped</option>
-                    </Form.Select>
+                    </select>
                     <Button onClick={() => handleDeleteOrder(_id)} className="ms-2" variant="outline-danger"><i className="fas fa-trash-alt"></i></Button></td>
-            </tr>
+            </tr >
         </>
     );
 };

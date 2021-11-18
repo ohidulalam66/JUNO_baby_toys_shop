@@ -18,7 +18,7 @@ const Stores = () => {
                 <p className="text-danger topMargin" >IN STORE JUNO TOYS & GAMES</p>
                 <h2 className="all-heading">In Store</h2>
                 <Container>
-                    <Row xs={1} md={3} className="g-4 py-5">
+                    <Row xs={1} sm={2} md={4} className="g-4 py-5">
                         {
                             storeProducts.map(storeProduct =>
                                 <Store

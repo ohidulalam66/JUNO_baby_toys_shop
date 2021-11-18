@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import './Banner.css';
 import { useSpring, animated } from '@react-spring/web'
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     const styles = useSpring({
@@ -24,7 +25,9 @@ const Banner = () => {
                                     for your kid
                                 </animated.div>
                                 <p>We offer a premium service, whether you are shopping at one our flagship stores or via our website !</p>
-                                <Button className="rounded-pill py-3 px-4">Learn More</Button>
+                                <Link to="/learnMore">
+                                    <Button variant="btn btn-outline-info" className=" px-4">Learn More</Button>
+                                </Link>
                             </div>
                         </Col>
                         <Col>

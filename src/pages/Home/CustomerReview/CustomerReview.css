@@ -1,3 +1,15 @@
-.review-message {
+.customer-email {
+    font-size: 12px;
+}
+.customer-email:hover {
+    color: #4F8CB8;
+    cursor: pointer;
+}
+
+.review-comment {
     color: gray;
+}
+.star-rating {
+    font-size: 10px;
+    color: #FFA500;
 }

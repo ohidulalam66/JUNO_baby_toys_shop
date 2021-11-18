@@ -12,15 +12,15 @@ const Footer = () => {
                         <img src="https://i.im.ge/2021/11/10/oYTSXP.png" alt="" />
                     </Link>
                     <div className="my-5 icons">
-                        <a href="https://www.w3schools.com"><i className="fab fa-facebook"></i></a>
-                        <a href="https://www.w3schools.com"><i className="fab fa-github"></i></a>
-                        <a href="https://www.w3schools.com"><i className="fab fa-twitter"></i></a>
-                        <a href="https://www.w3schools.com"><i className="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/mohammadohidulalam.moa" target="_blank"><i className="fab fa-facebook"></i></a>
+                        <a href="https://github.com/ohidulalam66" target="_blank"><i className="fab fa-github"></i></a>
+                        <a href="https://twitter.com/OaNoyon" target="_blank"><i className="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/mohammad-ohidul-alam-06a506216/" target="_blank"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                     <hr />
                     <p>JUNO Baby Toys Shop © 2021. All Rights Reserved.</p>
                 </Container>
-            </div>
+            </div >
         </>
     );
 };

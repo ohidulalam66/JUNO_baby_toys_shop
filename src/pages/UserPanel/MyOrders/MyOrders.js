@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const MyOrders = () => {
     const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
-    console.log(myOrders)
 
     useEffect(() => {
         fetch("https://thawing-beach-22228.herokuapp.com/orders")

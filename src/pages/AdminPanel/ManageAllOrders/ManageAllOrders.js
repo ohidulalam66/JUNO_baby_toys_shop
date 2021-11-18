@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    toast.success("Canceled SuccessFully", {
+                    toast.success("Order Canceled SuccessFully", {
                         position: "top-center",
                     });
                     const remainingOrder = orders.filter(user => user._id !== id);
