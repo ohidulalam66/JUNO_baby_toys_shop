@@ -34,7 +34,7 @@ const MakeAdmin = () => {
         fetch('https://thawing-beach-22228.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
-    }, [])
+    }, [users])
 
     const handleDeleteUser = id => {
         // const proceed = toast.success("Are you sure, you want to your client order Delete?");
