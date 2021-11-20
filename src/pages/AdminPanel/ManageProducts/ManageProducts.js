@@ -3,13 +3,12 @@ import { Col, Container, Row, Table, Button } from 'react-bootstrap';
 import './ManageProducts.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
 
 const ManageProducts = () => {
     const [manageProducts, setManageProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("https://thawing-beach-22228.herokuapp.com/products")
             .then(res => res.json())
             .then(data => setManageProducts(data))
     }, [])
@@ -17,7 +16,7 @@ const ManageProducts = () => {
     const handleDeleteProduct = id => {
         // const proceed = window.confirm("Are you sure, you want to your client order Delete?");
         // if (proceed) {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://thawing-beach-22228.herokuapp.com/products/${id}`;
         fetch(url, {
             method: "DELETE",
         })
@@ -61,10 +60,7 @@ const ManageProducts = () => {
                                             <td>{manageProduct?.price}</td>
                                             <td>{manageProduct?.categories}</td>
                                             <td>{manageProduct?.description}</td>
-                                            <td className="d-flex justify-content-center  align-items-center">
-                                                <Link to={`/updateProducts/${manageProduct?._id}`}>
-                                                    <Button className="ms-2" variant="outline-success"><i className="fas fa-wrench"></i></Button>
-                                                </Link>
+                                            <td>
                                                 <Button onClick={() => handleDeleteProduct(manageProduct?._id)} className="ms-2" variant="outline-danger"><i className="fas fa-trash-alt"></i></Button>
                                             </td>
                                         </tr>

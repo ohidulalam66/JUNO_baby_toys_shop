@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useSpring, animated } from '@react-spring/web'
 import './DiscoverNow.css';
+import { Link } from 'react-router-dom';
 
 const DiscoverNow = () => {
     const styles = useSpring({
@@ -27,7 +28,9 @@ const DiscoverNow = () => {
                             </h1>
                             <p>Fun, educational activities for every occasion with premium toys and snacks. Learn more about our services!</p>
                         </animated.div>
-                        <Button className="rounded-pill py-3 px-4">Discover Now</Button>
+                        <Link to="/details">
+                            <Button variant="btn btn-outline-success" className="py-2 px-3">Discover Now</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Container>

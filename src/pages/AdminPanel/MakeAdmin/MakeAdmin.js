@@ -31,7 +31,7 @@ const MakeAdmin = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://thawing-beach-22228.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
@@ -39,7 +39,7 @@ const MakeAdmin = () => {
     const handleDeleteUser = id => {
         // const proceed = toast.success("Are you sure, you want to your client order Delete?");
         // if (proceed) {
-        const url = `http://localhost:5000/usersDelete/${id}`;
+        const url = `https://thawing-beach-22228.herokuapp.com/usersDelete/${id}`;
         fetch(url, {
             method: "DELETE",
         })

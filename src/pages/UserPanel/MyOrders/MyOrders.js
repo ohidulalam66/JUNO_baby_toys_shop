@@ -14,7 +14,7 @@ const MyOrders = () => {
         fetch("https://thawing-beach-22228.herokuapp.com/orders")
             .then(res => res.json())
             .then(data => setMyOrders(data))
-    }, []);
+    }, [myOrders]);
 
     const handleDeleteOrder = id => {
         // const proceed = toast.success("Are you sure, you want to your client order Delete?");

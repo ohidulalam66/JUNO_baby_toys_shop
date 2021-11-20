@@ -18,9 +18,8 @@ import PrivateRoute from './pages/Secure/PrivateRoute/PrivateRoute';
 import Shop from './pages/Shop/Shop';
 import DashboardHome from './pages/DashboardHome/DashboardHome';
 import LearnMore from './pages/Home/LearnMore/LearnMore';
-import UpdateProduct from './pages/AdminPanel/UpdateProduct/UpdateProduct';
-import AdminRoute from './pages/Secure/AdminRoute/AdminRoute';
-// import AdminRoute from './pages/Secure/AdminRoute/AdminRoute';
+import Details from './pages/Home/DiscoverNow/Details/Details';
+
 
 function App() {
     return (
@@ -41,6 +40,9 @@ function App() {
                         <Route path="/stores">
                             <Stores />
                         </Route>
+                        <Route path="/details">
+                            <Details />
+                        </Route>
                         <PrivateRoute path="/dashboard">
                             <Dashboard />
                         </PrivateRoute>
@@ -50,9 +52,6 @@ function App() {
                         <PrivateRoute path="/shop/:productId">
                             <Shop />
                         </PrivateRoute>
-                        <AdminRoute exact path="/updateProducts/:id">
-                            <UpdateProduct />
-                        </AdminRoute>
                         <Route path="/login">
                             <Login />
                         </Route>

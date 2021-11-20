@@ -1,0 +1,9 @@
+.Pending {
+    color: red;
+}
+.Going {
+    color: skyblue;
+}
+.Shipped {
+    color: green;
+}

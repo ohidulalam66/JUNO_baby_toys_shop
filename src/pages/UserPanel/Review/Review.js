@@ -24,7 +24,7 @@ const Review = () => {
 
         const addNewReview = { name, email, comment, star };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://thawing-beach-22228.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

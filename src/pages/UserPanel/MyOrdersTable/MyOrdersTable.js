@@ -11,8 +11,8 @@ const MyOrdersTable = ({ myOrder, handleDeleteOrder }) => {
                 <td>{price}</td>
                 <td>{quantity}</td>
                 <td>{shipping}</td>
-                <td className="d-flex justify-content-center  align-items-evenly">
-                    <Button disabled variant="outline-warning">{status}</Button>
+                <td className="d-flex justify-content-center  align-items-center">
+                    <p className={status}>{status}</p>
                     <Button className="ms-2" onClick={() => handleDeleteOrder(_id)} variant="outline-danger"><i className="fas fa-trash-alt"></i></Button>
                 </td>
             </tr>

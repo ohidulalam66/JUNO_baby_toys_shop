@@ -11,7 +11,7 @@ const CustomerReviews = () => {
         const url = "https://thawing-beach-22228.herokuapp.com/reviews";
         fetch(url)
             .then(res => res.json())
-            .then(data => setCustomerReviews(data.slice(0, 6)))
+            .then(data => setCustomerReviews(data.slice(0, 3)))
     }, [])
 
     return (
