@@ -1,41 +1,13 @@
 .contact-content {
     background-color:#be7c2a79;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     margin-top: -50px;
     padding: 30px 0px;
     width: 75%;
     border-radius: 20px;
 
 }
-.address {
+
+.text-font {
     font-size: 14px;
-}
-.address:hover {
-    color: #F09182;
-    cursor: pointer;
-    transition-duration: 1s;
-}
-.phone {
-    font-size: 14px;
-}
-.phone:hover {
-    color: #F8C963;
-    cursor: pointer;
-    transition-duration: 1s;
-}
-.email {
-    font-size: 14px;
-}
-.email:hover {
-    color: #5AC6E9;
-    cursor: pointer;
-    transition-duration: 1s;
-}
-.website {
-    font-size: 14px;
-}
-.website:hover {
-    color: #6BC982;
-    cursor: pointer;
-    transition-duration: 1s;
 }

@@ -1,20 +1,9 @@
-.banner-bg {
-    background-image: url("https://i.im.ge/2021/11/10/oYo0dD.png");
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-blend-mode: darken;
-    background-size: cover;
-    background-position: center;
-}
-
 .topPadding {
     padding-top: 100px;
 }
 
 .banner-content {
     background-color: #ffffff;
-    opacity: 0.7;
-    margin-top: 150px;
 }
 
 .banner-heading {
