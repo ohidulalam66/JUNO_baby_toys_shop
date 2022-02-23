@@ -6,9 +6,7 @@
 [Live link to this website](https://juno-baby-toys-shop.web.app/ "JUNO BABY TOYS SHOP")
 - Server side code link: https://github.com/ohidulalam66/JUNO_baby-toys-shop-server-side
 
-- This website could not do this due to lack of time left for some functionality.
-- But I spent the best day of my coding life on this website. I learned a lot while doing the project.
-- The rest of the work will be done by the marks of the assignment.
-- When I went to do the assignment, I installed npm to get many features.
-- If you like the messages, you will look at them with a look of forgiveness. And keep a little prayer for me.
--Thanks
+- This is an e-commerce site. Now there is an admin panel and another user panel. 
+- In admin panel, admin can easily add a product, delete, monitor all orders of users. New admin can add.
+- As for the status, the order is able to change the status pending to the user, on the way, shiffed.
+- On the other hand, the user can order the product of his choice, give reviews, the user can monitor his own products.
