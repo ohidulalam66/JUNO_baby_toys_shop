@@ -8,5 +8,5 @@
 
 - This is an e-commerce site. Now there is an admin panel and another user panel. 
 - In admin panel, admin can easily add a product, delete, monitor all orders of users. New admin can add.
-- As for the status, the order is able to change the status pending to the user, on the way, shiffed.
+- Again, in status, the orders are pending with the user, on the way, shiffed, the admin is able to change all these statuses.
 - On the other hand, the user can order the product of his choice, give reviews, the user can monitor his own products.
