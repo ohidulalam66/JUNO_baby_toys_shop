@@ -1,6 +1,6 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import './LearnMore.css'
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import "./LearnMore.css";
 
 const LearnMore = () => {
   return (
@@ -83,10 +83,10 @@ const LearnMore = () => {
         </div>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default LearnMore
+export default LearnMore;
 
 /*
 

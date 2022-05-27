@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
   Alert,
   Col,
@@ -7,40 +7,40 @@ import {
   Row,
   Spinner,
   Button,
-} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router'
-import './Register.css'
-import useAuth from '../../hooks/useAuth'
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
+import "./Register.css";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const { user, registerUser, loading, error } = useAuth()
-  const [RegisterData, setRegisterData] = useState({})
+  const { user, registerUser, loading, error } = useAuth();
+  const [RegisterData, setRegisterData] = useState({});
 
-  const history = useHistory()
+  const history = useHistory();
 
   const handleOnBlur = (e) => {
-    const field = e.target.name
-    const value = e.target.value
-    const newRegisterData = { ...RegisterData }
-    newRegisterData[field] = value
-    console.log(newRegisterData)
-    setRegisterData(newRegisterData)
-  }
+    const field = e.target.name;
+    const value = e.target.value;
+    const newRegisterData = { ...RegisterData };
+    newRegisterData[field] = value;
+    console.log(newRegisterData);
+    setRegisterData(newRegisterData);
+  };
 
   const handleRegisterSubmit = (e) => {
     if (RegisterData.password !== RegisterData.password2) {
-      ;<Alert variant="danger">Wrong! Did not Your Password Match.</Alert>
-      return
+      <Alert variant="danger">Wrong! Did not Your Password Match.</Alert>;
+      return;
     }
     registerUser(
       RegisterData.name,
       RegisterData.email,
       RegisterData.password,
-      history,
-    )
-    e.preventDefault()
-  }
+      history
+    );
+    e.preventDefault();
+  };
   return (
     <>
       <Container>
@@ -132,10 +132,10 @@ const Register = () => {
         </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
 
 /*
 

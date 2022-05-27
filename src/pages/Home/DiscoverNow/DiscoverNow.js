@@ -1,15 +1,15 @@
-import React from 'react'
-import { Col, Container, Row, Button } from 'react-bootstrap'
-import { useSpring, animated } from '@react-spring/web'
-import './DiscoverNow.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Col, Container, Row, Button } from "react-bootstrap";
+import { useSpring, animated } from "@react-spring/web";
+import "./DiscoverNow.css";
+import { Link } from "react-router-dom";
 
 const DiscoverNow = () => {
   const styles = useSpring({
     loop: true,
-    to: [{ color: '#74E0FE' }, { color: '#E9282B' }],
-    from: { color: '#8FBE2D' },
-  })
+    to: [{ color: "#74E0FE" }, { color: "#E9282B" }],
+    from: { color: "#8FBE2D" },
+  });
   return (
     <>
       <Container className="pb-5">
@@ -41,9 +41,9 @@ const DiscoverNow = () => {
         </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default DiscoverNow
+export default DiscoverNow;
 
 //

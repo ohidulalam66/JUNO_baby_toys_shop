@@ -1,15 +1,15 @@
-import React from 'react'
-import { Col, Container, Row, Button } from 'react-bootstrap'
-import './Banner.css'
-import { useSpring, animated } from '@react-spring/web'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Col, Container, Row, Button } from "react-bootstrap";
+import "./Banner.css";
+import { useSpring, animated } from "@react-spring/web";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const styles = useSpring({
     loop: true,
-    to: [{ color: '#ffaaee' }, { color: 'rgb(14,26,19)' }],
-    from: { color: 'red' },
-  })
+    to: [{ color: "#ffaaee" }, { color: "rgb(14,26,19)" }],
+    from: { color: "red" },
+  });
   return (
     <>
       <div className="topPadding mb-5">
@@ -43,7 +43,7 @@ const Banner = () => {
         </Container>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

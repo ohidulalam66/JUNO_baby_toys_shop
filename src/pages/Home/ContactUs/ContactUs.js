@@ -1,6 +1,6 @@
-import React from 'react'
-import { Col, Row } from 'react-bootstrap'
-import './ContactUs.css'
+import React from "react";
+import { Col, Row } from "react-bootstrap";
+import "./ContactUs.css";
 
 const ContactUs = () => {
   return (
@@ -42,10 +42,10 @@ const ContactUs = () => {
         </Row>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ContactUs
+export default ContactUs;
 
 /*
 https://i.im.ge/2021/11/15/obhJz0.png(Address)

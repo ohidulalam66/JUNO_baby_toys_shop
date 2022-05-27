@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
   Col,
   Container,
@@ -7,35 +7,35 @@ import {
   Spinner,
   Button,
   Alert,
-} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import useAuth from '../../hooks/useAuth'
-import { useHistory, useLocation } from 'react-router'
-import './Login.css'
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import { useHistory, useLocation } from "react-router";
+import "./Login.css";
 
 const Login = () => {
-  const [logInData, setLogInData] = useState({})
-  const { user, loginUser, signInWithGoogle, loading, error } = useAuth()
+  const [logInData, setLogInData] = useState({});
+  const { user, loginUser, signInWithGoogle, loading, error } = useAuth();
 
-  const location = useLocation()
-  const history = useHistory()
+  const location = useLocation();
+  const history = useHistory();
 
   const handleOnBlur = (e) => {
-    const field = e.target.name
-    const value = e.target.value
-    const newLoginData = { ...logInData }
-    newLoginData[field] = value
-    setLogInData(newLoginData)
-  }
+    const field = e.target.name;
+    const value = e.target.value;
+    const newLoginData = { ...logInData };
+    newLoginData[field] = value;
+    setLogInData(newLoginData);
+  };
 
   const handleLoginSubmit = (e) => {
-    loginUser(logInData.email, logInData.password, location, history)
-    e.preventDefault()
-  }
+    loginUser(logInData.email, logInData.password, location, history);
+    e.preventDefault();
+  };
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle(location, history)
-  }
+    signInWithGoogle(location, history);
+  };
 
   return (
     <>
@@ -114,7 +114,7 @@ const Login = () => {
         </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
